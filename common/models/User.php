@@ -24,6 +24,10 @@ use yii\web\IdentityInterface;
 class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
+    const STATUS_NEW = 1;
+    const STATUS_CONFIRMED = 2;
+    const STATUS_DISABLED = 3;
+    const STATUS_BANNED = 4;
     const STATUS_ACTIVE = 10;
 
 
@@ -32,7 +36,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function tableName()
     {
-        return '{{%user}}';
+        return 'user.profile';
     }
 
     /**
